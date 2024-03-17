@@ -1,0 +1,14 @@
+<nav>
+  <div class="sprint-group">
+    <!-- Example data, replace with binding -->
+    <h1 class="sprint__title">{{ selectedSprint?.name }}</h1>
+    <span class="sprint__date"
+      >{{ selectedSprint?.startDate | date }} to
+      {{ selectedSprint?.endDate | date }}</span
+    >
+  </div>
+  <div class="btn-group">
+    <p-button label="Previous" (onClick)="viewPrevSprint()"></p-button>
+    <p-button label="Next" (onClick)="viewNextSprint()"></p-button>
+  </div>
+</nav>

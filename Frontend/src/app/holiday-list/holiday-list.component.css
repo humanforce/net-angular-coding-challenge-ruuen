@@ -1,0 +1,27 @@
+.title {
+  font-size: 2rem;
+}
+
+.holiday-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 1em;
+  list-style: none;
+  border-radius: 8px;
+}
+
+.holiday-list__item {
+  flex: 1;
+}
+
+.card-body__text-group {
+  margin-bottom: 1em;
+}
+
+.card-body__date {
+  font-weight: bold;
+}

@@ -1,0 +1,21 @@
+.title {
+  font-size: 2rem;
+}
+
+.stat-group {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  flex-wrap: wrap;
+}
+
+.stat {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 50rem) {
+  .stat-group {
+    flex-direction: row;
+  }
+}

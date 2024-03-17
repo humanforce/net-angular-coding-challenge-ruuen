@@ -1,0 +1,22 @@
+<main class="main">
+  <app-sprint-control
+    [selectedSprint]="selectedSprint"
+    [changeSprint]="changeSprint"
+  ></app-sprint-control>
+  <div class="content-wrapper">
+    <div class="left-col">
+      <app-sprint-statistics
+        [selectedSprint]="selectedSprint"
+      ></app-sprint-statistics>
+      <app-sprint-tickets
+        [selectedSprint]="selectedSprint"
+      ></app-sprint-tickets>
+    </div>
+    <div class="right-col">
+      <app-holiday-list [selectedSprint]="selectedSprint"></app-holiday-list>
+      <app-user-list></app-user-list>
+    </div>
+  </div>
+</main>
+
+<router-outlet />

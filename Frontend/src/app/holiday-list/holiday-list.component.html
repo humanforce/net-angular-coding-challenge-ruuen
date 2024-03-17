@@ -1,0 +1,16 @@
+<article>
+  <h2 class="title">Holidays</h2>
+  <ul class="holiday-list">
+    <li class="holiday-list__item" *ngFor="let holiday of holidayList">
+      <p-card>
+        <div class="card-body">
+          <div class="card-body__text-group">
+            <p>{{ holiday.name }}</p>
+            <p>{{ holiday.location.country }}</p>
+          </div>
+          <p class="card-body__date">{{ holiday.startDate | date }}</p>
+        </div>
+      </p-card>
+    </li>
+  </ul>
+</article>
