@@ -57,4 +57,35 @@ public class MockSprintRepository : ISprintRepository
         // Return the currently active sprint
         return currentSprint;
     }
+
+    public List<Sprint> GetPreviousSprintsById(int sprintId, int maxPrevCount)
+    {
+        // Get index of target sprint
+        int targetSprint = _data.FindIndex(sprint => sprint.Id == sprintId);
+        
+        // Return empty list if no sprint found, or if sprint found is first in the list
+        if (targetSprint <= 0)
+        {
+            return new List<Sprint>();
+        }
+        
+        // Init loop iterator
+        int currentIndex = targetSprint - 1;
+        // Up to the max previous count, store each previous sprint,
+        List<Sprint> prevSprints = new List<Sprint>();
+        for (int i = maxPrevCount; i > 0; i--)
+        {
+            // Don't process if a negative-index call will occur, this means we've got all available items
+            if (currentIndex < 0)
+            {
+                break;
+            }
+            
+            prevSprints.Add(_data[currentIndex]);
+            currentIndex--;
+        }
+        
+        // Return found previous sprints
+        return prevSprints;
+    }
 }

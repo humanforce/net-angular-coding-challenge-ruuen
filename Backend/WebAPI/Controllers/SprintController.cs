@@ -40,5 +40,19 @@ namespace WebAPI.Controllers
 
             return NotFound();
         }
+        
+        [HttpGet("{sprintId}/velocity")]
+        public IActionResult GetSprintVelocity(int sprintId)
+        {
+            // quickly testing out my repo method to get previous sprints
+            var results = _sprintData.GetPreviousSprintsById(sprintId, 3);
+            
+            if (results.Count > 0)
+            {
+                return Ok(results);
+            }
+            
+            return Ok(new List<Sprint>());
+        }
     }
 }
