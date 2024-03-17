@@ -16,6 +16,15 @@ export class SprintService {
     return this.http.get<Sprint>(`${this.baseUrl}/currentSprint`);
   }
 
+  getSprintByDate(startDate: string, endDate: string): Observable<Sprint> {
+    const params = new URLSearchParams([
+      ['startDate', startDate],
+      ['endDate', endDate],
+    ]);
+
+    return this.http.get<Sprint>(`${this.baseUrl}?${params.toString()}`);
+  }
+
   getSprintCapacity(sprintId: number): Observable<SprintCapacity> {
     return this.http.get<SprintCapacity>(
       `${this.baseUrl}/${sprintId}/capacity`

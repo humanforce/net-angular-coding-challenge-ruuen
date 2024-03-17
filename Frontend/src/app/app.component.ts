@@ -31,4 +31,10 @@ export class AppComponent {
       .getCurrentSprint()
       .subscribe((sprint) => (this.selectedSprint = sprint));
   }
+
+  changeSprint = (startDate: string, endDate: string): void => {
+    this.sprintService
+      .getSprintByDate(startDate, endDate)
+      .subscribe((sprint) => (this.selectedSprint = sprint));
+  };
 }
