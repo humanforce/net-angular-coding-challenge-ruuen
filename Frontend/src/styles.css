@@ -10,4 +10,9 @@
   * {
     margin: 0;
   }
+
+  html,
+  body {
+    background-color: #f1f5f9;
+  }
 }
