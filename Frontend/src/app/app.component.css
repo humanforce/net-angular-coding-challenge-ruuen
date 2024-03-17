@@ -16,6 +16,10 @@
   gap: 2em;
 }
 
+.left-col {
+  margin-bottom: 2em;
+}
+
 @media (min-width: 50rem) {
   .main {
     padding: 3em;
@@ -24,5 +28,9 @@
   .content-wrapper {
     display: flex;
     gap: 2em;
+  }
+
+  .left-col {
+    margin-bottom: 0;
   }
 }

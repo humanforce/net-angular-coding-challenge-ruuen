@@ -1,0 +1,29 @@
+.title {
+  font-size: 2rem;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1em;
+  background-color: #fff;
+  margin-top: 1em;
+  padding: 1em;
+  list-style: none;
+  border-radius: 8px;
+}
+
+.user-list__item {
+  flex: 1;
+}
+
+.user-list__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-list__name {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
