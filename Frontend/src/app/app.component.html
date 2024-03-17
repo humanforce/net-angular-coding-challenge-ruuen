@@ -5,7 +5,9 @@
       <app-sprint-statistics
         [selectedSprint]="selectedSprint"
       ></app-sprint-statistics>
-      <app-sprint-tickets></app-sprint-tickets>
+      <app-sprint-tickets
+        [selectedSprint]="selectedSprint"
+      ></app-sprint-tickets>
     </div>
     <div class="right-col">
       <app-holiday-list></app-holiday-list>
