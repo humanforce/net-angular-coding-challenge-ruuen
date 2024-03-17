@@ -26,4 +26,13 @@ public static class StatisticsService
             CapacityPercent = capacityPercent
         };
     }
+
+    public static SprintVelocity CalculateSprintVelocity(SprintCapacity sprintCapacity)
+    {
+        var velocityCalc = (sprintCapacity.TotalPointsCompleted + sprintCapacity.TotalPointsCommitted) / 2;
+        return new SprintVelocity
+        {
+            Value = velocityCalc
+        };
+    }
 }

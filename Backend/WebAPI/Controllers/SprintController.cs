@@ -44,12 +44,26 @@ namespace WebAPI.Controllers
         [HttpGet("{sprintId}/velocity")]
         public IActionResult GetSprintVelocity(int sprintId)
         {
-            // quickly testing out my repo method to get previous sprints
-            var results = _sprintData.GetPreviousSprintsById(sprintId, 3);
+            var prevSprints = _sprintData.GetPreviousSprintsById(sprintId, 3);
             
-            if (results.Count > 0)
+            if (prevSprints.Count > 0)
             {
-                return Ok(results);
+                // Get velocity for each sprint
+                List<double> velocityCalcs = new List<double>();
+                foreach (var sprint in prevSprints)
+                {
+                    var sprintTickets = _ticketData.GetAllBySprint(sprint.Id);
+                    SprintCapacity capacity = StatisticsService.CalculateSprintCapacity(sprintTickets);
+                    SprintVelocity velocity = StatisticsService.CalculateSprintVelocity(capacity);
+                    velocityCalcs.Add(velocity.Value);
+                }
+                
+                // Return average velocity based on past 1-3 sprints
+                SprintVelocity totalAvgVelocity = new SprintVelocity
+                {
+                    Value = velocityCalcs.Average()
+                };
+                return Ok(totalAvgVelocity);
             }
             
             return Ok(new List<Sprint>());
