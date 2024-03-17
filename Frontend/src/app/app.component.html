@@ -1,8 +1,10 @@
 <main class="main">
-  <app-sprint-control></app-sprint-control>
+  <app-sprint-control [selectedSprint]="selectedSprint"></app-sprint-control>
   <div class="content-wrapper">
     <div class="left-col">
-      <app-sprint-statistics></app-sprint-statistics>
+      <app-sprint-statistics
+        [selectedSprint]="selectedSprint"
+      ></app-sprint-statistics>
       <app-sprint-tickets></app-sprint-tickets>
     </div>
     <div class="right-col">

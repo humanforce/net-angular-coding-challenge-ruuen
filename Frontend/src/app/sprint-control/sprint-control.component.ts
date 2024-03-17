@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { SprintService } from '../sprint.service';
 import { Sprint } from '../types/sprint';
@@ -12,12 +12,5 @@ import { DatePipe } from '@angular/common';
   styleUrl: './sprint-control.component.css',
 })
 export class SprintControlComponent {
-  selectedSprint: Sprint | null = null;
-  sprintService: SprintService = inject(SprintService);
-
-  ngOnInit(): void {
-    this.sprintService
-      .getCurrentSprint()
-      .subscribe((sprint) => (this.selectedSprint = sprint));
-  }
+  @Input() selectedSprint!: Sprint | null;
 }
