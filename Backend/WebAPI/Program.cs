@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ISprintRepository, MockSprintRepository>();
 builder.Services.AddScoped<ITicketRepository, MockTicketRepository>();
 builder.Services.AddScoped<IUserRepository, MockUserRepository>();
+builder.Services.AddScoped<IPublicHolidayRepository, MockPublicHolidayRepository>();
 
 
 // Configure CORS for dev (or prod in future)
