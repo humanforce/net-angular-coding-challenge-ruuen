@@ -20,7 +20,7 @@ namespace WebAPI.Controllers
         [HttpGet]
         public IActionResult GetAllInDateRange(DateTime startDate, DateTime endDate)
         {
-            if (startDate.Year != 0001 || endDate.Year != 0001)
+            if (startDate.Year != 0001 && endDate.Year != 0001)
             {
                 var results = _publicHolidayData.GetAllInDateRange(startDate, endDate);
                 return Ok(results);
