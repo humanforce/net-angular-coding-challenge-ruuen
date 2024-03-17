@@ -1,6 +1,10 @@
+using Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Setup repository injection
+builder.Services.AddScoped<ISprintRepository, MockSprintRepository>();
 
 // Configure CORS for dev (or prod in future)
 string devOriginPolicy = "AllowClientDevServerOrigin";
