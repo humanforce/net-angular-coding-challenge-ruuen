@@ -14,6 +14,7 @@ public class TicketFields
 {
     public TicketPriority? Priority { get; set; }
     public required TicketStatus Status { get; set; }
+    public required string Summary { get; set; }
     // Sprint relationship in JSON response defined by field name "customfield_10020"
     [JsonPropertyName("customfield_10020")]
     public required List<Sprint> Sprints { get; set; }

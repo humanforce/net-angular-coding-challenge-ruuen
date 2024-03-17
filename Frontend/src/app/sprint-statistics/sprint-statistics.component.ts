@@ -22,7 +22,7 @@ export class SprintStatisticsComponent {
     if (this.selectedSprint === null) {
       return;
     }
-    console.log('init init');
+
     this.sprintService
       .getSprintCapacity(this.selectedSprint.id)
       .subscribe((capacity) => (this.capacityCalc = capacity.capacityPercent));
