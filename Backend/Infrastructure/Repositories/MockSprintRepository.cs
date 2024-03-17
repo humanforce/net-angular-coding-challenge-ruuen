@@ -38,7 +38,7 @@ public class MockSprintRepository : ISprintRepository
 
     public Sprint? GetByDates(DateTime startDate, DateTime endDate)
     {
-        Sprint? result = _data.FirstOrDefault(sprint => sprint.StartDate == startDate && sprint.EndDate == endDate);
+        Sprint? result = _data.FirstOrDefault(sprint => sprint.StartDate.Date == startDate.Date && sprint.EndDate.Date == endDate.Date);
         return result;
     }
 
