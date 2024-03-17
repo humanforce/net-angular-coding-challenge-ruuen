@@ -12,12 +12,16 @@
 .right-col {
   display: flex;
   flex-direction: column;
-  flex: 1 1 50%;
   gap: 2em;
 }
 
 .left-col {
   margin-bottom: 2em;
+  flex: 1 1 70%;
+}
+
+.right-col {
+  flex: 1 1 30%;
 }
 
 @media (min-width: 50rem) {
