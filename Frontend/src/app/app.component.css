@@ -1,0 +1,40 @@
+.main {
+  padding: 1em;
+  max-width: 125rem;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  margin-top: 2em;
+}
+
+.left-col,
+.right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.left-col {
+  margin-bottom: 2em;
+  flex: 1 1 70%;
+}
+
+.right-col {
+  flex: 1 1 30%;
+}
+
+@media (min-width: 50rem) {
+  .main {
+    padding: 3em;
+  }
+
+  .content-wrapper {
+    display: flex;
+    gap: 2em;
+  }
+
+  .left-col {
+    margin-bottom: 0;
+  }
+}

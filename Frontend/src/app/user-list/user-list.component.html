@@ -1,0 +1,16 @@
+<article>
+  <h2 class="title">Team availability</h2>
+  <ul class="user-list">
+    <li class="user-list__item" *ngFor="let user of userData">
+      <p-card>
+        <div class="user-list__body">
+          <div>
+            <p class="user-list__name">{{ user.name }}</p>
+            <p>{{ user.location.country }}</p>
+          </div>
+          <p-tag value="Available"></p-tag>
+        </div>
+      </p-card>
+    </li>
+  </ul>
+</article>
