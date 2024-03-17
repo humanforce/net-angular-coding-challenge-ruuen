@@ -36,9 +36,10 @@ public class MockSprintRepository : ISprintRepository
         return result;
     }
 
-    public Sprint GetByDates(DateTime startDate, DateTime endDate)
+    public Sprint? GetByDates(DateTime startDate, DateTime endDate)
     {
-        throw new NotImplementedException();
+        Sprint? result = _data.FirstOrDefault(sprint => sprint.StartDate == startDate && sprint.EndDate == endDate);
+        return result;
     }
 
     public Sprint GetCurrentOrLast()

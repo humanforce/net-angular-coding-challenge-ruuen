@@ -21,13 +21,30 @@ namespace WebAPI.Controllers
             _ticketData = ticketData;
         }
 
+        [HttpGet]
+        public IActionResult GetByDates(DateTime startDate, DateTime endDate)
+        {
+            if (startDate.Year == 0001 || endDate.Year == 0001)
+            {
+                return BadRequest();
+            }
+            
+            var result = _sprintData.GetByDates(startDate, endDate);
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(result);
+        }
+        
         [HttpGet("currentSprint")]
         public IActionResult GetCurrentOrLastSprint()
         {
             var result = _sprintData.GetCurrentOrLast();
             return Ok(result);
         }
-
+        
         [HttpGet("{sprintId}/capacity")]
         public IActionResult GetSprintCapacity(int sprintId)
         {
